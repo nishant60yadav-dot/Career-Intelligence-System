@@ -1,32 +1,47 @@
 # Python
 __pycache__/
-*.py[cod]
-*$py.class
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environments
+venv/
+.env/
+batteryml/
+
+# VS Code
+.vscode/
 
 # macOS
 .DS_Store
 
-# VS Code settings
-.vscode/
-
-# Virtual environments
-venv/
-.env/
+# Excel temporary files
+~$*.xlsx
 
 # Logs
 *.log
 
+# Python cache
+.pytest_cache/
+
 # Jupyter
 .ipynb_checkpoints/
 
-# Pytest
-.pytest_cache/
-
-# Coverage
-.coverage
-htmlcov/
-
-# Build artifacts
+# Build
 build/
 dist/
-*.egg-info/
+
+# Playwright
+playwright-report/
+
+# Environment
+.env
+
+# Keep generated reports out of Git
+data/jobs_database.xlsx
+data/jobs_raw.xlsx
+data/jobs_clean.xlsx
+data/todays_top_jobs.xlsx
+
+# Keep backup files out of Git
+data/companies_backup.xlsx

@@ -1,28 +1,42 @@
 """
-ATS Detection Module
+ATS Detector
 """
-
-from urllib.parse import urlparse
 
 
 class ATSDetector:
-    """Detects the ATS platform from a career URL."""
 
-    def detect(self, url: str) -> str:
+    def detect(self, career_url):
 
-        hostname = urlparse(url).netloc.lower()
+        if not career_url:
+            return "Direct"
 
-        if "greenhouse" in hostname:
+        url = career_url.lower()
+
+        if "greenhouse" in url:
             return "Greenhouse"
 
-        elif "lever" in hostname:
+        if "lever.co" in url:
             return "Lever"
 
-        elif "ashby" in hostname:
+        if "ashbyhq" in url:
             return "Ashby"
 
-        elif "workday" in hostname:
+        if "myworkdayjobs" in url:
             return "Workday"
 
-        else:
-            return "Direct"
+        if "myworkdaysite" in url:
+            return "Workday"
+
+        if "smartrecruiters" in url:
+            return "SmartRecruiters"
+
+        if "icims" in url:
+            return "iCIMS"
+
+        if "taleo" in url:
+            return "Taleo"
+
+        if "successfactors" in url:
+            return "SuccessFactors"
+
+        return "Direct"

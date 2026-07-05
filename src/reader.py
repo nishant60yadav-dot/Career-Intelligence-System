@@ -1,7 +1,5 @@
 """
-reader.py
-
-Reads configuration files for the Career Intelligence System.
+Configuration Reader
 """
 
 from pathlib import Path
@@ -10,28 +8,21 @@ import pandas as pd
 
 
 class ConfigReader:
-    """Reads configuration from Excel files."""
 
-    def __init__(self, data_folder: str = "data"):
-        self.data_folder = Path(data_folder)
-        self.companies_file = self.data_folder / "companies.xlsx"
+    def __init__(self):
+
+        self.file = Path("data/companies.xlsx")
 
     def load_targets(self):
-        """Load the Targets sheet."""
 
-        targets = pd.read_excel(
-            self.companies_file,
-            sheet_name="Targets"
+        return pd.read_excel(
+            self.file,
+            sheet_name="Battery Job Database"
         )
-
-        return targets
 
     def load_keywords(self):
-        """Load the Keywords sheet."""
 
-        keywords = pd.read_excel(
-            self.companies_file,
+        return pd.read_excel(
+            self.file,
             sheet_name="Keywords"
         )
-
-        return keywords
